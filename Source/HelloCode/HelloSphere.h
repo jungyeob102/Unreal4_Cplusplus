@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/TextRenderComponent.h"
 #include "HelloSphere.generated.h"
 
 UCLASS()
@@ -14,6 +15,9 @@ class HELLOCODE_API AHelloSphere : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AHelloSphere();
+
+protected:
+	class UTextRenderComponent* TextRenderComponent;
 
 protected:
 	// Called when the game starts or when spawned
