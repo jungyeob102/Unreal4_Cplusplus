@@ -60,6 +60,21 @@ AHelloSphere::AHelloSphere()
 	TextRenderComponent->SetXScale(2.0f);
 	TextRenderComponent->SetVisibility(true);
 	TextRenderComponent->SetText(NSLOCTEXT("AnyNs", "Any", "HelloWorld"));
+
+	OnActorBeginOverlap.AddDynamic(this, &AHelloSphere::MyOnBeginOverlap);
+	OnActorEndOverlap.AddDynamic(this, &AHelloSphere::MyOnEndOverlap);
+}
+
+void AHelloSphere::MyOnBeginOverlap(AActor* OverlappedActor, AActor* OtherActor)
+{
+	FString outputString;
+	outputString = "Hello" + OtherActor->GetName() + "!";
+	TextRenderComponent->SetText(FText::FromString(outputString));
+}
+
+void AHelloSphere::MyOnEndOverlap(AActor* OverlappedActor, AActor* OtherActor)
+{
+	TextRenderComponent->SetText(NSLOCTEXT("AnyNs", "Any", "HelloWorld"));
 }
 
 // Called when the game starts or when spawned
