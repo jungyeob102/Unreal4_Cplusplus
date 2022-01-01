@@ -50,11 +50,14 @@ AHelloSphere::AHelloSphere()
 		FireParticles->SetRelativeLocation(FVector(0.0f, 0.0f, 150.0f));
 	}
 
+	//Text Render Component 생성
 	TextRenderComponent = CreateDefaultSubobject<UTextRenderComponent>(TEXT("Text"));
 
+	//TextRenderComponent를 SphereVisual에 붙이기
 	TextRenderComponent->AttachTo(SphereVisual);
 	TextRenderComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 110.0f));
 
+	//TextRenderComponent 중앙 정렬, 사이즈 조절, 가시성 활성화, 텍스트 설정
 	TextRenderComponent->SetHorizontalAlignment(EHTA_Center);
 	TextRenderComponent->SetYScale(2.0f);
 	TextRenderComponent->SetXScale(2.0f);
