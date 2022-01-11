@@ -4,32 +4,22 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components/TextRenderComponent.h"
-#include "HelloSphere.generated.h"
+#include "SecondSphere.generated.h"
 
 UCLASS()
-class HELLOCODE_API AHelloSphere : public AActor
+class ARENABATTLE_API ASecondSphere : public AActor
 {
 	GENERATED_BODY()
-
-public:
+	
+public:	
 	// Sets default values for this actor's properties
-	AHelloSphere();
-
-protected:
-	class UTextRenderComponent* TextRenderComponent;
-
-	UFUNCTION()
-		void MyOnBeginOverlap(AActor* OverlappedActor, AActor* otherActor);
-
-	UFUNCTION()
-		void MyOnEndOverlap(AActor* OverlappedActor, AActor* otherActor);
+	ASecondSphere();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:
+public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

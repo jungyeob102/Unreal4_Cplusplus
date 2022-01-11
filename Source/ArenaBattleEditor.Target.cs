@@ -3,12 +3,12 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class HelloCodeEditorTarget : TargetRules
+public class ArenaBattleEditorTarget : TargetRules
 {
-	public HelloCodeEditorTarget( TargetInfo Target) : base(Target)
+	public ArenaBattleEditorTarget( TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.AddRange( new string[] { "HelloCode" } );
+		ExtraModuleNames.AddRange( new string[] { "ArenaBattle" } );
 	}
 }

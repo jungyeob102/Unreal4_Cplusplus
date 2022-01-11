@@ -4,23 +4,30 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SecondSphere.generated.h"
+#include "Components/StaticMeshComponent.h"
+#include "Fountain.generated.h"
 
 UCLASS()
-class HELLOCODE_API ASecondSphere : public AActor
+class ARENABATTLE_API AFountain : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
-	ASecondSphere();
+	AFountain();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY()
+		UStaticMeshComponent* Body;
+
+	UPROPERTY()
+		UStaticMeshComponent* Water;
 
 };

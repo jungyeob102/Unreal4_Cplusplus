@@ -4,17 +4,26 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components/StaticMeshComponent.h"
-#include "Fountain.generated.h"
+#include "Components/TextRenderComponent.h"
+#include "HelloSphere.generated.h"
 
 UCLASS()
-class HELLOCODE_API AFountain : public AActor
+class ARENABATTLE_API AHelloSphere : public AActor
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this actor's properties
-	AFountain();
+	AHelloSphere();
+
+protected:
+	class UTextRenderComponent* TextRenderComponent;
+
+	UFUNCTION()
+		void MyOnBeginOverlap(AActor* OverlappedActor, AActor* otherActor);
+
+	UFUNCTION()
+		void MyOnEndOverlap(AActor* OverlappedActor, AActor* otherActor);
 
 protected:
 	// Called when the game starts or when spawned
@@ -23,11 +32,5 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	UPROPERTY()
-		UStaticMeshComponent* Body;
-
-	UPROPERTY()
-		UStaticMeshComponent* Water;
 
 };

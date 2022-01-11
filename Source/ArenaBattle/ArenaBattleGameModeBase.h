@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "HelloCodeGameModeBase.generated.h"
+#include "ArenaBattleGameModeBase.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class HELLOCODE_API AHelloCodeGameModeBase : public AGameModeBase
+class ARENABATTLE_API AArenaBattleGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	

@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class HelloCode : ModuleRules
+public class ArenaBattle : ModuleRules
 {
-	public HelloCode(ReadOnlyTargetRules Target) : base(Target)
+	public ArenaBattle(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
