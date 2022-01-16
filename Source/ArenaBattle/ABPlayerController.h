@@ -20,4 +20,6 @@ public:
 	//컨트롤러 to 폰 빙의 시점
 	virtual void OnPossess(APawn* aPawn) override;
 
+protected:
+	virtual void BeginPlay() override;
 };

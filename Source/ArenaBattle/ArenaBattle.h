@@ -5,6 +5,11 @@
 #include "CoreMinimal.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/PointLightComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(ArenaBattle, Log, All);
