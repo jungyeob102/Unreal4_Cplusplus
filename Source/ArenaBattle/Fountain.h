@@ -2,11 +2,9 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "ArenaBattle.h"
+#include "GameFramework/RotatingMovementComponent.h"
 #include "GameFramework/Actor.h"
-#include "Components/StaticMeshComponent.h"
-#include "Components/PointLightComponent.h"
-#include "Particles/ParticleSystemComponent.h"
 #include "Fountain.generated.h"
 
 UCLASS()
@@ -21,6 +19,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+	virtual void PostInitializeComponents() override;
 
 public:
 	// Called every frame
@@ -38,6 +38,13 @@ public:
 	UPROPERTY(VisibleAnywhere)
 		UParticleSystemComponent* Splash;
 
-	UPROPERTY(EditAnywhere, Category=ID)
+	UPROPERTY(EditAnywhere, Category = ID)
 		int32 ID;
+
+	UPROPERTY(VisibleAnywhere)
+		URotatingMovementComponent* Movement;
+
+private:
+	UPROPERTY(EditAnywhere, Category = Stat, Meta = (AllowPrivateAccess = true))
+		float RotateSpeed;
 };
